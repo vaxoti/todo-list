@@ -3,19 +3,20 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <AddTask :tasks="tasks" />
+    <FilterTasks />
     <TaskList :tasks="tasks" />
-    {{tasks[0].done}}  {{tasks[0].title}} <input type="number" v-model='tasks[0].priority'>
   </div>
 </template>
 
 <script>
 import TaskList from "./components/TaskList.vue";
-import AddTask from "./components/AddTask.vue"
+import AddTask from "./components/AddTask.vue";
+import FilterTasks from "./components/FilterTasks.vue"
 export default {
   name: "app",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App1",
+      msg: "ToDo list on Vue",
       tasks: [
         {
           done: true,
@@ -46,7 +47,8 @@ export default {
   },
   components: {
     AddTask,
-    TaskList
+    TaskList,
+    FilterTasks
   }
 };
 </script>

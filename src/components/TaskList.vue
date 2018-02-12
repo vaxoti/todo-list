@@ -10,7 +10,7 @@
         <th @click="sortList">Priority</th>
         <th @click="sortList">Date</th>
         </tr>
-      <tr :key="task" v-for="task in orderBy(tasks, orderText, 'date', orderValue)">
+      <tr :key="task" v-for="task in orderBy(tasks, orderText, 'date', orderValue)" :class="{'doned': task.done}">
         <td><input type="checkbox" v-model="task.done"></td>
         <td>{{task.title}} </td>
         <td>{{priorityView(task)}}</td>
@@ -82,5 +82,9 @@ table tr:first-of-type {
 ul {
   margin: 0 auto;
   text-align: left;
+}
+table tr.doned {
+color: #666;
+  text-decoration: line-through;
 }
 </style>
