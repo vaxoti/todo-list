@@ -4,7 +4,7 @@
     <h1>{{ msg }}</h1>
    
     <TaskList :tasks="tasks" />
-    {{tasks[0].done}}  {{tasks[0].title}} 
+    {{tasks[0].done}}  {{tasks[0].title}} <input type="number" v-model='tasks[0].priority'>
   </div>
 </template>
 
