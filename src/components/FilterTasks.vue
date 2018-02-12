@@ -1,10 +1,11 @@
 <template>
   <div class="root">
     <h1>
-      Hello
+      Filter by
     </h1>
-    <input type="checkbox" v-model="config.complited">
-    <input type="text" v-model="config.searchText">
+    <label for="coplited">Complited</label>
+    <input id="coplited" type="checkbox" v-model="config.complited"><br>
+    <input type="text" v-model="config.searchText" placeholder="Serach...">
     <br>
   </div>
 </template>

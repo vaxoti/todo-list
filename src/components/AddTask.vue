@@ -3,14 +3,14 @@
     <h1>
       Add New Task
     </h1>
-    <label for="title">Title: </label>
-    <input id="title" type="text" v-model="task.title"><br>
     <label for="prior">Priority: </label>
-    <select id="prior" v-model="task.priority">
+      <select id="prior" v-model="task.priority">
       <option value=1>High</option>
       <option value=2>Mid</option>
       <option value=3>Low</option>
     </select><br>
+    <label for="title">Title: </label>
+    <input id="title" type="text" v-model="task.title"><br>
     <label for="date">Date: </label>
     <input id="date" type="date" v-model="task.date"><br>
     <button class="addButton" @click="addTask">ADD TASK</button>
@@ -35,8 +35,11 @@ export default {
   methods: {
     addTask: function() {
       let task = Object.assign({}, this.task);
-      task.date = new Date(task.date)
+      task.date = new Date(task.date);
       this.tasks.push(task);
+      this.task.title = '';
+      this.task.priority = 3;
+      this.task.date = new Date()
     }
   }
 };

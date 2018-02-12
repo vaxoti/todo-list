@@ -81,7 +81,13 @@ h1,
 h2 {
   font-weight: normal;
 }
-
+select {
+  width: 200px;
+  padding: 5px 10px;
+}
+input {
+  padding: 5px 10px;
+}
 a {
   color: #42b983;
 }
