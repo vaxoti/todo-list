@@ -12,7 +12,7 @@
         </tr>
       <tr :key="task" v-for="task in orderBy(tasks, orderText, 'date', orderValue)">
         <td><input type="checkbox" v-model="task.done"></td>
-        <td><input type="text" v-model="task.title"> </td>
+        <td>{{task.title}} </td>
         <td>{{priorityView(task)}}</td>
         <td>{{shortDate(task)}}</td>
       </tr>
