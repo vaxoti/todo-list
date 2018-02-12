@@ -17,15 +17,31 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App1",
       tasks: [
-        { done: true,
-          title: 'Create ToDo',
+        {
+          done: true,
+          title: "Create ToDo",
           priority: 1,
-          date: new Date() },
-        { done: false,
-          title: 'Create ToDo222',
+          date: new Date()
+        },
+        {
+          done: false,
+          title: "Git commit that",
           priority: 2,
-          date: new Date('12.01.2015')}
-        ]
+          date: new Date("8.11.2016")
+        },
+        {
+          done: false,
+          title: "Got to shop",
+          priority: 2,
+          date: new Date("3.4.2017")
+        },
+        {
+          done: false,
+          title: "lalalalalalala",
+          priority: 2,
+          date: new Date("10.23.2018")
+        },
+      ]
     };
   },
   components: {
