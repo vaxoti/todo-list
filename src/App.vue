@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-   
+   <AddTask />
     <TaskList :tasks="tasks" />
     {{tasks[0].done}}  {{tasks[0].title}} <input type="number" v-model='tasks[0].priority'>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import TaskList from "./components/TaskList.vue";
-
+import AddTask from "./components/AddTask.vue"
 export default {
   name: "app",
   data() {
@@ -27,12 +27,12 @@ export default {
           done: false,
           title: "Git commit that",
           priority: 2,
-          date: new Date("8.11.2016")
+          date: new Date("8.11.2019")
         },
         {
           done: false,
           title: "Got to shop",
-          priority: 2,
+          priority: 3,
           date: new Date("3.4.2017")
         },
         {
@@ -45,6 +45,7 @@ export default {
     };
   },
   components: {
+    AddTask,
     TaskList
   }
 };

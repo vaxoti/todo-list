@@ -10,7 +10,7 @@
         <th @click="sortList">Priority</th>
         <th @click="sortList">Date</th>
         </tr>
-      <tr :key="task" v-for="task in orderBy(tasks, orderText, orderValue)">
+      <tr :key="task" v-for="task in orderBy(tasks, orderText, 'date', orderValue)">
         <td><input type="checkbox" v-model="task.done"></td>
         <td><input type="text" v-model="task.title"> </td>
         <td>{{priorityView(task)}}</td>
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       orderText: 'priority',
-      orderValue: -1
+      orderValue: 1
     }
   },
   props: {
@@ -39,11 +39,11 @@ export default {
       let priority = parseInt(task.priority);
       switch (priority) {
         case 1:
-          return "Low";
+          return "Hight";
         case 2:
           return "Mid";
         case 3:
-          return "Hight";
+          return "Low";
         default:
           return "Error";
       }
@@ -59,6 +59,8 @@ export default {
 
 <style>
 table {
+  border: 1px solid #aaa;
+  border-radius: 20px;
   margin: 0 auto;
   border-collapse: collapse;
   color: #000;
@@ -67,11 +69,15 @@ table th:hover{
   cursor: pointer;
 }
 table td, table th {
-  padding: 4px 10px;
+  padding: 5px 10px;
 }
 table tr:nth-child(odd) {
   color: #000;
   background: #aaa;
+}
+table tr:first-of-type {
+  background: #666;
+  color: #fff;
 }
 ul {
   margin: 0 auto;
