@@ -4,7 +4,7 @@
     List Of All Tasks
     </h1>
     <ul>
-      <li :key="task" v-for="task in tasks"> <input type="checkbox" v-model="task.done"> | <input type="text" v-model="task.title"> | {{task.priority}} | {{task.date.getFullYear()}}-{{task.date.getMonth()+1}}-{{task.date.getDate()}}</li>
+      <li :key="task" v-for="task in tasks"> <input type="checkbox" v-model="task.done"> | <input type="text" v-model="task.title"> | {{task.priority}} | {{shortDate(task)}}</li>
     </ul>
   </div>
 </template>
@@ -12,6 +12,11 @@
 export default {
   props: {
     tasks: Array
+  },
+  methods: {
+    shortDate: task => {
+      return `${task.date.getFullYear()}-${task.date.getMonth()+1}-${task.date.getDate()}`
+    },
   }
 };
 </script>

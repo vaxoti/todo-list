@@ -4,7 +4,7 @@
     <h1>{{ msg }}</h1>
    
     <TaskList :tasks="tasks" />
-    {{tasks[0].title}}
+    {{tasks[0].done}}  {{tasks[0].title}} 
   </div>
 </template>
 
