@@ -5,6 +5,7 @@
     </h1>
     <input type="checkbox" v-model="config.complited">
     <input type="text" v-model="config.searchText">
+    <br>
   </div>
 </template>
 

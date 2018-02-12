@@ -46,7 +46,7 @@ export default {
       filterConfig: {
         complited: false,
         dateFrom: new Date(0),
-        dateTo: new Date(3000),
+        dateTo: new Date(3000,0),
         searchText: ''
       }
     };

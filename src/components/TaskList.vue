@@ -11,7 +11,7 @@
         <th @click="sortList">Date</th>
       </tr>
       <tr :key="task" 
-          v-if="(!task.done || config.complited) && (task.date >= confing.dateFrom && task.date <= config.dateTo)"
+          v-if="(!task.done || config.complited) && (task.date >= config.dateFrom && task.date <= config.dateTo)"
           v-for="task in orderBy(filterBy(tasks, config.searchText), orderText, 'date', orderValue) "
           :class="{'doned': task.done} ">
         <td><input type="checkbox" v-model="task.done"></td>
