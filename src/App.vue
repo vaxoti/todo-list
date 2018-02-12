@@ -3,8 +3,8 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <AddTask :tasks="tasks" />
-    <FilterTasks />
-    <TaskList :tasks="tasks" />
+    <FilterTasks :config="filterConfig" />
+    <TaskList :tasks="tasks" :config="filterConfig" />
   </div>
 </template>
 
@@ -42,7 +42,13 @@ export default {
           priority: 2,
           date: new Date("10.23.2018")
         },
-      ]
+      ],
+      filterConfig: {
+        complited: false,
+        dateFrom: new Date(0),
+        dateTo: new Date(3000),
+        searchText: ''
+      }
     };
   },
   components: {
@@ -54,8 +60,16 @@ export default {
 </script>
 
 <style>
+.root {
+  padding: 20px 10px;
+  margin: 10px auto;
+  max-width: 500px;
+  border: 1px solid #666;
+  border-radius: 5px;
+
+}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="root">
     <h1>
     List Of All Tasks
     </h1>
@@ -9,8 +9,11 @@
         <th @click="sortList">Title</th>
         <th @click="sortList">Priority</th>
         <th @click="sortList">Date</th>
-        </tr>
-      <tr :key="task" v-for="task in orderBy(tasks, orderText, 'date', orderValue)" :class="{'doned': task.done}">
+      </tr>
+      <tr :key="task" 
+          v-if="(!task.done || config.complited) && (task.date >= confing.dateFrom && task.date <= config.dateTo)"
+          v-for="task in orderBy(filterBy(tasks, config.searchText), orderText, 'date', orderValue) "
+          :class="{'doned': task.done} ">
         <td><input type="checkbox" v-model="task.done"></td>
         <td>{{task.title}} </td>
         <td>{{priorityView(task)}}</td>
@@ -28,7 +31,8 @@ export default {
     }
   },
   props: {
-    tasks: Array
+    tasks: Array,
+    config: Object
   },
   methods: {
     shortDate: task => {

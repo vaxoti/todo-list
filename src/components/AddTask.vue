@@ -1,5 +1,5 @@
 <template>
-  <div class="addTask">
+  <div class="addTask root">
     <h1>
       Add New Task
     </h1>
@@ -13,7 +13,6 @@
     </select><br>
     <label for="date">Date: </label>
     <input id="date" type="date" v-model="task.date"><br>
-    {{task.date}}
     <button class="addButton" @click="addTask">ADD TASK</button>
     
   </div>
@@ -58,7 +57,7 @@ export default {
   margin: 10px 0;
   color: #fff;
   padding: 7px 40px;
-  background: #888;
+  background: #777;
   border: none;
 }
 .addTask .addButton:hover {
